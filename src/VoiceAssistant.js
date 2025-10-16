@@ -8,15 +8,15 @@ const VoiceAssistant = () => {
     const vapi = new Vapi("d76e59d4-29cb-4eb6-9e41-0256456907cc");
 
     // Start gomb
-    const startBtn = document.getElementById("startBtn");
-    startBtn.onclick = () => {
+    const startButton = document.getElementById("startBtn");
+    startButton.onclick = () => {
       console.log("Assistant started...");
       vapi.start("767ac174-c058-4cb7-84b4-a72282bcf429"); // ide jön az Assistant ID
     };
 
     // Stop gomb
-    const stopBtn = document.getElementById("stopBtn");
-    stopBtn.onclick = () => {
+    const stopButton = document.getElementById("stopBtn");
+    stopButton.onclick = () => {
       console.log("Assistant stopped.");
       vapi.stop();
     };
