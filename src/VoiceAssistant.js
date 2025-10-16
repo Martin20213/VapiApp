@@ -11,7 +11,6 @@ const VoiceAssistant = () => {
     const startBtn = document.getElementById("startBtn");
     startBtn.onclick = () => {
       console.log("Assistant started...");
-      alert("Asszisztens indul");
       vapi.start("767ac174-c058-4cb7-84b4-a72282bcf429"); // ide jön az Assistant ID
     };
 
