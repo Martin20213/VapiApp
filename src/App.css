@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Teljes képernyős középre igazítás */
+.app-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  background-color: #0d0d0d; /* Sötét háttér */
 }
 
-.App-link {
-  color: #61dafb;
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #0d0d0d;
+  color: #c084fc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Alapértelmezett kurzor eltüntetése */
+body, .app-container {
+  position: relative;
+}
+
+
+
+
+/* Neon gomb */
+.neon-button {
+
+  background-color: black;
+  color: #f5ecff;
+  border: 2px solid #c084fc;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+ font-family: 'Sola', sans-serif;
+  position: relative;
+  z-index: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #c084fc80, 0 0 20px #c084fc40;
+}
+
+/* Hover effektus */
+.neon-button:hover {
+
+  
+  color: black;
+  background-color: #c084fc;
+  box-shadow: 0 0 20px #c084fc, 0 0 40px #c084fc, 0 0 60px #c084fc;
+}
+
+/* ÚJ: kurzor hover állapotra, amikor a gomb fölött van */
+
+/* Extra animáció (opcionális) */
+.neon-button::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #c084fc, #7f00ff, #c084fc);
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.6;
+  border-radius: 50px;
+  animation: neonGlow 4s infinite linear;
+}
+
+
+@keyframes neonGlow {
+  0% {
+    filter: hue-rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    filter: hue-rotate(360deg);
   }
 }
